@@ -5,3 +5,14 @@
 body {
   margin: 0;
 }
+
+.app-shell {
+  padding: 16px;
+  gap: 12px;
+}
+
+.mood-active {
+  box-shadow: inset 0 0 0 2px currentColor;
+}
+=======
+
