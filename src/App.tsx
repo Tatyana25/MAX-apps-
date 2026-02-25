@@ -1,3 +1,4 @@
+
 import { type ChangeEvent, useEffect, useState } from 'react';
 import { Button, Container, Grid, Input, Panel, Typography } from '@maxhub/max-ui';
 import { type Mood, type PulseEntry, loadPulse, savePulse } from './lib/storage';
@@ -62,6 +63,19 @@ function App() {
           ) : (
             <Typography variant="body1">Пока нет данных</Typography>
           )}
+=======
+import { Button, Container, Grid, Input, Panel, Typography } from '@maxhub/max-ui';
+
+function App() {
+  return (
+    <Panel>
+      <Container>
+        <Grid>
+          <Typography variant="h3">MAX Mini App</Typography>
+          <Typography variant="body1">Базовый экран на MAX UI.</Typography>
+          <Input placeholder="Введите текст" aria-label="demo-input" />
+          <Button>Продолжить</Button>
+
         </Grid>
       </Container>
     </Panel>
