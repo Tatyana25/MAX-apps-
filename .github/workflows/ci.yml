@@ -11,6 +11,8 @@ on:
 
 =======
 
+=======
+
 permissions:
   contents: read
   pages: write
@@ -21,6 +23,7 @@ concurrency:
   cancel-in-progress: false
 
 =======
+
 
 
 
@@ -38,6 +41,17 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
+
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Build
+        run: npm run build
+=======
         run: npm ci
 
       - name: Build
@@ -65,6 +79,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 =======
+
 
 
 

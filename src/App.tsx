@@ -7,6 +7,9 @@
 
 =======
 
+=======
+
+
 
 
 
@@ -31,6 +34,8 @@ const dateTimeFormatter = new Intl.DateTimeFormat('ru-RU', {
 =======
 
 =======
+
+=======
 =======
 
 import { type ChangeEvent, useEffect, useState } from 'react';
@@ -38,6 +43,7 @@ import { Button, Container, Grid, Input, Panel, Typography } from '@maxhub/max-u
 import { type Mood, type PulseEntry, loadPulse, savePulse } from './lib/storage';
 
 const moods: Mood[] = ['🙂', '😐', '😫'];
+
 
 
 
@@ -59,6 +65,9 @@ function App() {
 
 =======
 
+=======
+
+
 
 
 
@@ -72,6 +81,8 @@ function App() {
   const platformInfo = useMemo(() => getPlatformInfo(), []);
   const isSubmitDisabled = comment.trim().length === 0;
 
+
+=======
 
 =======
 
@@ -113,6 +124,8 @@ function App() {
           {!inMax && (
             <Typography variant="body1">Откройте внутри клиента MAX</Typography>
           )}
+
+=======
 =======
 
 =======
@@ -125,6 +138,7 @@ function App() {
 
 
           <Typography variant="body1">В MAX: {inMax ? 'да' : 'нет'}</Typography>
+
 
           <Typography variant="body1">start_param: {startParam ?? '—'}</Typography>
           <Typography variant="body1">
@@ -139,7 +153,10 @@ function App() {
 =======
 
 =======
+
 =======
+=======
+
 
 
 
@@ -189,7 +206,13 @@ function App() {
             Отправить
           </Button>
 =======
+
+          <Button onClick={handleSubmit} disabled={isSubmitDisabled}>
+            Отправить
+          </Button>
+=======
           <Button onClick={handleSubmit}>Отправить</Button>
+
 
 
 
@@ -214,7 +237,11 @@ function App() {
 
               {dateTimeFormatter.format(lastEntry.ts)}
 =======
+
+              {dateTimeFormatter.format(lastEntry.ts)}
+=======
               {new Date(lastEntry.ts).toLocaleString()}
+
 
 
 
@@ -224,6 +251,8 @@ function App() {
           ) : (
             <Typography variant="body1">Пока нет данных</Typography>
           )}
+
+=======
 
 =======
 
@@ -246,6 +275,7 @@ function App() {
           <Typography variant="body1">Базовый экран на MAX UI.</Typography>
           <Input placeholder="Введите текст" aria-label="demo-input" />
           <Button>Продолжить</Button>
+
 
 
 
