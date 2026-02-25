@@ -1,6 +1,9 @@
 
 =======
 
+=======
+
+
 
 import { type ChangeEvent, useEffect, useMemo, useState } from 'react';
 import { Button, Container, Grid, Input, Panel, Typography } from '@maxhub/max-ui';
@@ -16,6 +19,8 @@ const dateTimeFormatter = new Intl.DateTimeFormat('ru-RU', {
 
 
 =======
+
+=======
 =======
 
 import { type ChangeEvent, useEffect, useState } from 'react';
@@ -23,6 +28,7 @@ import { Button, Container, Grid, Input, Panel, Typography } from '@maxhub/max-u
 import { type Mood, type PulseEntry, loadPulse, savePulse } from './lib/storage';
 
 const moods: Mood[] = ['🙂', '😐', '😫'];
+
 
 
 
@@ -34,6 +40,9 @@ function App() {
   useEffect(() => {
 
 =======
+
+=======
+
 
 
     ready();
@@ -47,9 +56,12 @@ function App() {
 
 
 =======
+
+=======
 =======
     setLastEntry(loadPulse());
   }, []);
+
 
 
 
@@ -75,6 +87,9 @@ function App() {
 
 =======
 
+=======
+
+
 
           <Typography variant="body1">В MAX: {inMax ? 'да' : 'нет'}</Typography>
           <Typography variant="body1">start_param: {startParam ?? '—'}</Typography>
@@ -84,7 +99,10 @@ function App() {
 
 
 =======
+
 =======
+=======
+
 
 
           <Grid>
@@ -116,7 +134,13 @@ function App() {
             Отправить
           </Button>
 =======
+
+          <Button onClick={handleSubmit} disabled={isSubmitDisabled}>
+            Отправить
+          </Button>
+=======
           <Button onClick={handleSubmit}>Отправить</Button>
+
 
 
           <Typography variant="h4">Последняя отправка</Typography>
@@ -129,13 +153,19 @@ function App() {
 
               {dateTimeFormatter.format(lastEntry.ts)}
 =======
+
+              {dateTimeFormatter.format(lastEntry.ts)}
+=======
               {new Date(lastEntry.ts).toLocaleString()}
+
 
 
             </Typography>
           ) : (
             <Typography variant="body1">Пока нет данных</Typography>
           )}
+
+=======
 
 =======
 
@@ -152,6 +182,7 @@ function App() {
           <Typography variant="body1">Базовый экран на MAX UI.</Typography>
           <Input placeholder="Введите текст" aria-label="demo-input" />
           <Button>Продолжить</Button>
+
 
 
 
