@@ -1,6 +1,9 @@
 # MAX Mini App
 
+
+=======
 <
+
 Mini App для MAX на React + TypeScript + Vite.
 На этом этапе подключён MAX UI (`@maxhub/max-ui`) и базовый экран на его компонентах.
 
@@ -17,6 +20,8 @@ npm run dev
 npm run build
 npm run preview
 ```
+
+=======
 
 =======
 
@@ -37,5 +42,6 @@ npm run preview
 ## Дальше
 
 Следующим шагом можно сделать минимальный каркас приложения (TS strict + smoke build).
+
 
 
