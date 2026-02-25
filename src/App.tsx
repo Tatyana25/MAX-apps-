@@ -1,4 +1,7 @@
 
+=======
+
+
 import { type ChangeEvent, useEffect, useMemo, useState } from 'react';
 import { Button, Container, Grid, Input, Panel, Typography } from '@maxhub/max-ui';
 import { type Mood, type PulseEntry, loadPulse, savePulse } from './lib/storage';
@@ -11,6 +14,8 @@ const dateTimeFormatter = new Intl.DateTimeFormat('ru-RU', {
   timeStyle: 'medium'
 });
 
+
+=======
 =======
 
 import { type ChangeEvent, useEffect, useState } from 'react';
@@ -20,12 +25,16 @@ import { type Mood, type PulseEntry, loadPulse, savePulse } from './lib/storage'
 const moods: Mood[] = ['🙂', '😐', '😫'];
 
 
+
 function App() {
   const [mood, setMood] = useState<Mood>('🙂');
   const [comment, setComment] = useState('');
   const [lastEntry, setLastEntry] = useState<PulseEntry | null>(null);
 
   useEffect(() => {
+
+=======
+
 
     ready();
     setLastEntry(loadPulse());
@@ -36,9 +45,12 @@ function App() {
   const platformInfo = useMemo(() => getPlatformInfo(), []);
   const isSubmitDisabled = comment.trim().length === 0;
 
+
+=======
 =======
     setLastEntry(loadPulse());
   }, []);
+
 
 
   const handleSubmit = () => {
@@ -61,13 +73,19 @@ function App() {
           <Typography variant="body1">Выберите настроение и отправьте короткий комментарий.</Typography>
 
 
+=======
+
+
           <Typography variant="body1">В MAX: {inMax ? 'да' : 'нет'}</Typography>
           <Typography variant="body1">start_param: {startParam ?? '—'}</Typography>
           <Typography variant="body1">
             platform/version: {platformInfo.platform ?? '—'} / {platformInfo.version ?? '—'}
           </Typography>
 
+
 =======
+=======
+
 
           <Grid>
             {moods.map((item) => (
@@ -93,6 +111,11 @@ function App() {
             Отправить
           </Button>
 =======
+
+          <Button onClick={handleSubmit} disabled={isSubmitDisabled}>
+            Отправить
+          </Button>
+=======
           <Button onClick={handleSubmit}>Отправить</Button>
 
 
@@ -103,12 +126,18 @@ function App() {
 
               {dateTimeFormatter.format(lastEntry.ts)}
 =======
+
+              {dateTimeFormatter.format(lastEntry.ts)}
+=======
               {new Date(lastEntry.ts).toLocaleString()}
+
 
             </Typography>
           ) : (
             <Typography variant="body1">Пока нет данных</Typography>
           )}
+
+=======
 
 =======
 =======
@@ -123,6 +152,7 @@ function App() {
           <Typography variant="body1">Базовый экран на MAX UI.</Typography>
           <Input placeholder="Введите текст" aria-label="demo-input" />
           <Button>Продолжить</Button>
+
 
 
         </Grid>
