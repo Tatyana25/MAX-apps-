@@ -8,6 +8,13 @@ export interface WebApp {
 }
 
 export function getWebApp(): WebApp | null {
+
+  if (typeof window === 'undefined') {
+    return null;
+  }
+
+=======
+
   const webApp = (window as any).WebApp as WebApp | undefined;
   return webApp ?? null;
 }

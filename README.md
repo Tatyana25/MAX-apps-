@@ -13,11 +13,16 @@ Mini App для MAX на React + TypeScript + Vite.
 Подключены MAX UI (`@maxhub/max-ui`) и MAX Bridge для чтения контекста запуска.
 =======
 
+Mini App для MAX на React + TypeScript + Vite.
+Подключены MAX UI (`@maxhub/max-ui`) и MAX Bridge для чтения контекста запуска.
+=======
+
 =======
 
 
 Mini App для MAX на React + TypeScript + Vite.
 На этом этапе подключён MAX UI (`@maxhub/max-ui`) и базовый экран на его компонентах.
+
 
 
 
@@ -40,6 +45,9 @@ npm run preview
 =======
 
 =======
+
+=======
+
 
 
 
@@ -71,6 +79,9 @@ https://max.ru/<BOT_NAME>
 
 =======
 
+=======
+
+
 
 ## Vite base для GitHub Pages
 
@@ -83,6 +94,8 @@ base: '/MAX-apps-/'
 
 Если приложение разворачивается в корень домена (например, кастомный домен),
 используйте `base: '/'`.
+
+=======
 
 =======
 =======
@@ -108,6 +121,7 @@ base: '/MAX-apps-/'
 ## Дальше
 
 Следующим шагом можно сделать минимальный каркас приложения (TS strict + smoke build).
+
 
 
 
